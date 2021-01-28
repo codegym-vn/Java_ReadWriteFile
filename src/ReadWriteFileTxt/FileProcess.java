@@ -8,28 +8,30 @@ import java.util.Scanner;
 
 public class FileProcess {
     public static void main(String[] args) {
-        WriteToFile();
-        ReadFile();
+        String path = "filename2.txt";
+        writeToFile(path,"Hello C11G1");
+        String result = readFile(path);
+        System.out.println(result);
     }
-    public static void ReadFile() {
+    public static String readFile(String path) {
+       String result = "";
         try {
-            File myObj = new File("filename.txt");
+            File myObj = new File(path);
             Scanner myReader = new Scanner(myObj);
             while (myReader.hasNextLine()) {
-                String data = myReader.nextLine();
-                System.out.println(data);
+                result = myReader.nextLine();
             }
             myReader.close();
         } catch (FileNotFoundException e) {
             System.out.println("Cannot find file");
         }
-        System.out.println(1);
+        return result;
     }
 
-    public static void WriteToFile() {
+    public static void writeToFile(String pathName, String data) {
         try {
-            FileWriter myWriter = new FileWriter("filename2.txt");
-            myWriter.write("Files in Java might be tricky, but it is fun enough!");
+            FileWriter myWriter = new FileWriter(pathName);
+            myWriter.write(data);
             myWriter.close();
         } catch (IOException e) {
             e.printStackTrace();
