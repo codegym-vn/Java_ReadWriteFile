@@ -2,7 +2,7 @@ package ReadWriteFileObject;
 
 import java.io.Serializable;
 
-public class Student implements Serializable {
+public class Student implements Serializable{
     private String firstName;
     private String lastName;
     private int age;
@@ -41,10 +41,6 @@ public class Student implements Serializable {
 
     @Override
     public String toString() {
-        return "Student{" +
-                "firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", age=" + age +
-                '}';
+        return "first" + firstName +","+ "lastName"+ lastName+","+"age"+age;
     }
 }

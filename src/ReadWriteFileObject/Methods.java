@@ -17,4 +17,20 @@ public class Methods {
             System.out.println(s.toString());
         }
     }
+    
+    public static long hi(){
+        return 7;
+    }
+
+    public static void main(String[] args) {
+        int a = 8;
+        String sonDt = "abc";
+        String sonxt = "abc";
+        String ka = new String("abc");
+        System.out.println(sonDt.hashCode());
+        System.out.println(ka.hashCode());
+        System.out.println(sonxt.hashCode());
+        boolean isEqual = sonDt == ka ;
+        System.out.println(isEqual);
+    }
 }
